@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FragmentMenu">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="30dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="20dp"
+        android:gravity="center_horizontal"
+        android:textAlignment="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="@string/select_product"
+        app:layout_constraintBottom_toTopOf="@+id/hamburguesa"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <ImageView
+        android:id="@+id/hamburguesa"
+        android:layout_width="409dp"
+        android:layout_height="0dp"
+        android:padding="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/salad"
+        app:layout_constraintEnd_toEndOf="@+id/salad"
+        app:layout_constraintStart_toStartOf="@+id/salad"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed"
+        app:srcCompat="@drawable/hamburguer" />
+
+    <ImageView
+        android:id="@+id/pizza"
+        android:layout_width="409dp"
+        android:layout_height="0dp"
+        android:padding="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/taco"
+        app:layout_constraintEnd_toEndOf="@+id/taco"
+        app:layout_constraintStart_toStartOf="@+id/taco"
+        app:layout_constraintTop_toBottomOf="@+id/salad"
+        app:srcCompat="@drawable/pizza" />
+
+    <ImageView
+        android:id="@+id/salad"
+        android:layout_width="409dp"
+        android:layout_height="0dp"
+        android:padding="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/pizza"
+        app:layout_constraintEnd_toEndOf="@+id/pizza"
+        app:layout_constraintStart_toStartOf="@+id/pizza"
+        app:layout_constraintTop_toBottomOf="@+id/hamburguesa"
+        app:srcCompat="@drawable/salad" />
+
+    <ImageView
+        android:id="@+id/taco"
+        android:layout_width="409dp"
+        android:layout_height="0dp"
+        android:padding="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pizza"
+        app:srcCompat="@drawable/taco"
+        tools:layout_editor_absoluteX="1dp" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

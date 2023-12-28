@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/fragmentMenu">
+
+    <fragment
+        android:id="@+id/fragmentMenu"
+        android:name="com.example.examendiciembre.FragmentMenu"
+        android:label="fragment_menu"
+        tools:layout="@layout/fragment_menu" >
+        <action
+            android:id="@+id/action_fragmentMenu_to_fragmentDetalles"
+            app:destination="@id/fragmentDetalles" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentDetalles"
+        android:name="com.example.examendiciembre.FragmentDetalles"
+        android:label="fragment_detalles"
+        tools:layout="@layout/fragment_detalles" >
+        <action
+            android:id="@+id/action_fragmentDetalles_to_fragmentConfirmacion"
+            app:destination="@id/fragmentConfirmacion" />
+        <argument
+            android:name="comida"
+            app:argType="string"
+            android:defaultValue="Algo va mal" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentConfirmacion"
+        android:name="com.example.examendiciembre.FragmentConfirmacion"
+        android:label="fragment_confirmacion"
+        tools:layout="@layout/fragment_confirmacion" >
+        <action
+            android:id="@+id/action_fragmentConfirmacion_to_fragmentShare"
+            app:destination="@id/fragmentShare" />
+        <argument
+            android:name="comida"
+            app:argType="string"
+            android:defaultValue="imposible" />
+        <argument
+            android:name="cantidad"
+            app:argType="integer"
+            android:defaultValue="0" />
+        <argument
+            android:name="horario"
+            app:argType="string"
+            android:defaultValue="Desayuno" />
+        <argument
+            android:name="nombre"
+            app:argType="string"
+            android:defaultValue="administrador" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentShare"
+        android:name="com.example.examendiciembre.FragmentShare"
+        android:label="fragment_share"
+        tools:layout="@layout/fragment_share" />
+</navigation>

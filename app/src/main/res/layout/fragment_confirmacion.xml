@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".FragmentConfirmacion">
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:id="@+id/txtConfimacion"
+        android:layout_width="wrap_content"
+        style="@style/TextAppearance.MaterialComponents.Headline4"
+        android:layout_height="wrap_content"
+        android:text="@string/confirmacion_fragment_title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="10dp"/>
+    <TextView
+        android:id="@+id/txtnombre"
+        android:layout_marginTop="15dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/txtConfimacion"
+        app:layout_constraintTop_toBottomOf="@id/txtConfimacion"
+        android:text="@string/hello_blank_fragment" />
+    <TextView
+        android:layout_marginTop="15dp"
+        android:id="@+id/txtCantidadConfirmacion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/txtnombre"
+        app:layout_constraintTop_toBottomOf="@id/txtnombre"
+        android:text="@string/hello_blank_fragment" />
+    <TextView
+        android:layout_marginTop="15dp"
+        android:id="@+id/txthorario2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/hello_blank_fragment"
+        app:layout_constraintStart_toStartOf="@id/txtCantidadConfirmacion"
+        app:layout_constraintTop_toBottomOf="@id/txtCantidadConfirmacion"/>
+
+    <Button
+        android:layout_marginTop="30dp"
+        android:id="@+id/btnCofirmar2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/confirmar"
+        app:layout_constraintEnd_toStartOf="@id/btnAtras"
+        app:layout_constraintTop_toBottomOf="@id/txthorario2"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <Button
+        android:id="@+id/btnAtras"
+        android:text="@string/atrasButtonText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/btnCofirmar2"
+        app:layout_constraintStart_toEndOf="@id/btnCofirmar2"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
