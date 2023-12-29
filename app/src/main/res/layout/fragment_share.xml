@@ -1,14 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".FragmentShare">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
+        android:id="@+id/txtRealizado"
+        android:gravity="center"
+        android:layout_marginTop="80dp"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        android:text="@string/pedido_realizado"
+        style="@style/TextAppearance.MaterialComponents.Headline3"/>
+    <ImageView
+        android:id="@+id/imgCheck"
+        android:layout_marginTop="90dp"
+        app:layout_constraintTop_toBottomOf="@+id/txtRealizado"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/listo"
+        />
+    <TextView
+        android:id="@+id/txtAhora"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/imgCheck"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:gravity="left"
+        android:text="@string/que_hacer_ahora"
+        android:layout_marginTop="70dp"
+        style="@style/TextAppearance.MaterialComponents.Headline4"
+        />
 
-</FrameLayout>
+    <ImageView
+        android:id="@+id/imgX"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/baseline_close_24"
+        app:layout_constraintTop_toBottomOf="@id/txtAhora"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="30dp"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+    <TextView
+        android:id="@+id/txtClose"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/imgX"
+        app:layout_constraintTop_toTopOf="@+id/imgX"
+        android:layout_marginLeft="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="@string/cerrar_aplicacion"
+        />
+    <ImageView
+        android:id="@+id/imgShare"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/share"
+        app:layout_constraintTop_toBottomOf="@id/imgX"
+        android:layout_marginLeft="30dp"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="30dp"
+        />
+    <TextView
+        android:id="@+id/txtShare"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/imgShare"
+        app:layout_constraintTop_toTopOf="@+id/imgShare"
+        android:layout_marginLeft="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="@string/compartir_text"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

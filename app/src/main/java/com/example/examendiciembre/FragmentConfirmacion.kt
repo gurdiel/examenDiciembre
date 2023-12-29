@@ -31,6 +31,10 @@ class FragmentConfirmacion : Fragment() {
         binding.txtCantidadConfirmacion.text = String.format("${getString(R.string.pedido_confirmacion)}",args.cantidad,args.comida)
         binding.txthorario2.text = String.format("${getString(R.string.horario_confirmacion)}",args.horario)
 
+        binding.btnCofirmar2.setOnClickListener {
+            findNavController().navigate(FragmentConfirmacionDirections.actionFragmentConfirmacionToFragmentShare())
+        }
+
         binding.btnAtras.setOnClickListener {
             findNavController().popBackStack()
         }

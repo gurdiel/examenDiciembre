@@ -42,11 +42,12 @@ class FragmentDetalles : Fragment() {
     }
 
     private fun comprobar() {
-        val cantidad = binding.itxtCantidad.text.toString().toInt()
-        if(cantidad == null || cantidad == 0) {
-            Toast.makeText(activity, R.string.error_cantidad_vacia, Toast.LENGTH_SHORT).show()
+
+        if(binding.itxtCantidad.text.toString().toIntOrNull() == null || binding.itxtCantidad.text.toString().toIntOrNull() == 0) {
+                Toast.makeText(activity, R.string.error_cantidad_vacia, Toast.LENGTH_SHORT).show()
             return
         }
+        val cantidad = binding.itxtCantidad.text.toString().toInt()
 
         val horario = when(binding.grupoBotones.checkedRadioButtonId){
 
@@ -54,10 +55,17 @@ class FragmentDetalles : Fragment() {
             binding.SegundoBoton.id -> getString(R.string.para_cenar_horario)
             else -> "Sin horario"
         }
+
+
+        if(binding.itxtNombre.text.toString() == null || binding.itxtNombre.text.toString() == "") {
+            Toast.makeText(activity, R.string.error_nombre_vacio, Toast.LENGTH_SHORT).show()
+            return
+        }
         val nombre = binding.itxtNombre.text.toString()
 
         val action = FragmentDetallesDirections.actionFragmentDetallesToFragmentConfirmacion(args.comida,
             cantidad,horario,nombre)
+
         findNavController().navigate(action)
 
     }
